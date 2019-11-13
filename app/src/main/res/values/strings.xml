@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Grocery Store</string>
+    <string name="action_settings">设置</string>
+    <string name="title_activity_mini_qb">MiniQBActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="tag"> (X5内核功能演示)</string>
+    <string name="tip">普通接入直接参考“APPApplication” “BrowserActivity” “X5WebView”中相关实现即可</string>
+
+    <string-array name="index_titles">
+        <item>浏览器demo</item>
+        <item>全屏播放</item>
+        <item>文件选择器</item>
+    </string-array>
+    <string name="title_activity_ba_huang_hou">BaHuangHouActivity</string>
+
+
+    <string name="kqzl">空气质量：</string>
+
+    <string name="temp">气温：</string>
+    <string name="shidu">湿度：</string>
+    <string name="PM25">PM25：</string>
+    <string name="huwai">户外：</string>
+    <string name="title_activity_hook">HookActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+
+</resources>

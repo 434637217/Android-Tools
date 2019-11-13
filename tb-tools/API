@@ -1,0 +1,366 @@
+Tools
+
+Tools.app()	获取Application, 即Context
+All tools list: AppTool, ApkTool, InputMethodTool, IntentTool, ProcessTool, SnackbarTool, ToastTool, ConstantsTool, ConvertTool, DeviceTool, NetworkTool, BitmapTool, CloseTool, ExternalStorageTool, FileTool, SPTool, LogTool, RegexTool, SecureTool, ShellTool, StringTool, TimeTool, UnitTool.
+
+AppTool
+//usage examples:
+Tools.appTool().getAllRunningService(Tools.app()); //获取所有运行的服务
+    Tools.appTool().startService(Tools.app(), MockService.class); //启动服务
+getAllRunningService	获取所有运行的服务
+startService	启动服务
+stopService	停止服务
+bindService	绑定服务
+unbindService	解绑服务
+getAppVersionCode	获取应用版本号
+getLauncherActivity	获取launcher activity
+getPackageName	获取应用包名
+getTopActivityName	获取顶层activity名称
+getVersionNameFromPackage	获取应用版本名称
+isActivityExists	判断是否存在Activity
+isAppForeground	判断App是否处于前台
+isProessRunning	进程是否运行
+isProessRunning	进程是否运行
+isRunningForeground	判断应用是否在前台运行
+isServiceRunning	服务是否运行
+launchActivity	打开Activity
+ApkTool
+//usage examples:
+Tools.apk().getAppDetailsSettings(Tools.app()); // 获取App具体设置
+
+
+getAppDetailsSettings	获取App具体设置
+getAppIcon	获取App图标
+getAppName	获取App名称
+getAppPath	获取App路径
+getAppSignature	获取App签名
+getAppSignatureSHA1	获取应用签名的的SHA1值
+getChannelFromApk	从apk中获取版本信息
+installApp	安装App
+installAppSilent	静默安装App
+uninstallAppSilent	静默卸载App
+判断App是否是Debug版本
+检查手机上是否安装了指定的软件
+判断App是否有root权限
+判断App是否是系统应用
+打开App
+卸载App
+InputMethodTool
+//usage examples:
+Tools.inputMethod().isActiveSoftInput(Tools.app()); // 判断输入法是否处于激活状态
+
+hideInputSoftFromWindowMethod	隐藏键盘 ：强制隐藏
+isActiveSoftInput	判断输入负是否处于激活状态
+showInputSoftFromWindowMethod	显示输入法
+ProcessTool
+//usage examples:
+Tools.process().getAllBackgroundProcesses(); // 获取后台服务进程
+
+getAllBackgroundProcesses	获取所有的后台服务进程
+getForegroundProcessName	获取前台线程包名
+killAllBackgroundProcesses	杀死所有的后台服务进程
+killBackgroundProcesses	杀死后台服务进程
+IntentTool
+//usage examples:
+Tools.intent().getInstallAppIntent("/sdcard/mock.apk"); // 获取安装App的意图
+
+getAppDetailsSettingsIntent	获取App具体设置的意图
+getCaptureIntent	获取拍照的意图
+getComponentIntent	获取其他应用组件的意图
+getInstallAppIntent	获取安装App的意图
+getLaunchAppIntent	获取打开App的意图
+getShareImageIntent	获取分享图片的意图
+getShareTextIntent	获取分享文本的意图
+getShutdownIntent	获取分享文本的意图
+getUninstallAppIntent	获取分享文本的意图
+SnackbarTool
+//usage examples:
+Tools.snackbar().dismissSnackbar()(); // 取消snackbar显示
+
+addView	为snackbar添加布局 在show...Snackbar之后调用
+dismissSnackbar	取消snackbar显示
+showIndefiniteSnackbar	显示自定义时长snackbar
+showLongSnackbar	显示长时snackbar
+showShortSnackbar	显示短时snackbar
+ProcessTool
+//usage examples:
+Tools.process().getAllBackgroundProcesses(); // 获取后台服务进程
+
+getAllBackgroundProcesses	获取后台服务进程
+ToastTool
+//usage examples:
+Tools.toast().showToast(Toast.app, "show toast"); // 获取后台服务进程
+
+showToast	显示Short型Toast
+showToastLong	显示Long型Toast
+ConvertTool
+//usage examples:
+   Tools.convert().dp2px(50f); // dp转px
+bitmap2Bytes	bitmap转byteArr
+bitmap2Drawable	bitmap转drawable
+bits2Bytes	bits转bytes
+byte2FitMemorySize	字节数转合适内存大小 保留3位小数
+byte2MemorySize	字节数转以unit为单位的内存大小
+bytes2Bitmap	byteArr转bitmap
+bytes2Bits	bytes转bits
+bytes2Chars	byteArr转charArr
+bytes2Drawable	byteArr转drawable
+bytes2HexString	byteArr转hexString
+bytes2InputStream	byteArr转inputStream
+bytes2OutputStream	outputStream转byteArr
+dp2px	dp转px
+px2dp	px转dp
+px2sp	px转sp
+sp2px	sp转px
+drawable2Bitmap	drawable转bitmap
+drawable2Bytes	drawable转byteArr
+hexString2Bytes	hexString转byteArr
+input2OutputStream	inputStream转outputStream
+inputStream2Bytes	inputStream转byteArr
+inputStream2String	inputStream转string按编码
+memorySize2Byte	以unit为单位的内存大小转字节数
+millis2FitTimeSpan	毫秒时间戳转合适时间长度
+millis2TimeSpan	毫秒时间戳转以unit为单位的时间长度
+output2InputStream	outputStream转inputStream
+outputStream2Bytes	outputStream转byteArr
+outputStream2String	outputStream转string按编码
+string2InputStream	string转inputStream按编码
+string2OutputStream	string转outputStream按编码
+timeSpan2Millis	以unit为单位的时间长度转毫秒时间戳
+view2Bitmap	view转Bitmap
+DeviceTool
+//usage examples:
+Tools.device().getAllSDCardSize(); // 获取SD大小
+
+coptyToClipBoard	复制到剪切板
+existSDCard	判断SDCard是否可用
+getAllSDCardSize	获取SD大小
+getAppPackageNamelist	获取非系统应用包名
+getAvailaleSDCardSize	获取可用空间大小
+getIMEI	获取IMEI
+getLatestCameraPicture	获取最后一次拍照的图片
+getLocalIPAddress	获取本机IP地址
+getMac	获取MAC地址
+getNavigationBarHeight	获取navigationbar高度
+getScreenPix	获取手机大小（分辨率）
+getStatusBarHeight	获取statusbar高度
+getTopBarHeight	获取状态栏高度＋标题栏(ActionBar)高度
+getUDID	获取UDID
+goHome	主动回到Home，后台运行
+isOnline	是否有网络
+isSoftKeyAvail	判断是否有软控制键
+isSoftKeyAvail	判断是否有软控制键
+vibrate	震动
+NetworkTool
+//usage examples:
+   Tools.network().getDataEnabled()(); // 判断移动数据是否打开
+
+
+getDataEnabled	判断移动数据是否打开
+getDomainAddress	获取域名ip地址
+getIPAddress	获取IP地址
+getNetType	判断手机连接的网络类型(wifi,2G,3G,4G)
+getNetworkOperatorName	获取网络运营商名称 如中国移动、中国联通、中国电信
+is4G()	判断网络是否是4G
+isNetworkConnected	判断是否连接网络
+isWifiConnected	判断是否连接wifi
+openWirelessSettings	打开网络设置界面 3.0以下打开设置界面
+setDataEnabled	打开或关闭移动数据
+BitmapTool
+//usage examples:
+   Tools.bitmap().toRoundCorner(); // 转化成圆bitmap
+
+
+bitmapToByte	Bitmap转bytes
+bitmapToDrawable	Bitmap转Drawable
+bitmapToString	bitmap转换成Base64编码String
+byteToBitmap	bytes转Bitmap
+compressBimap	质量压缩图片-压缩在maxSize以内
+compressBitmap	等比压缩（宽高等比缩放）
+compressBitmap	压缩bitmp到目标大小（质量压缩）
+compressBitmap	质量压缩图片-压缩在1M以内
+compressBitmap	质量压缩图片
+compressBitmap	图片缩放-尺寸缩放
+compressBitmapBig	图片缩放-尺寸缩放
+compressBitmapSmall	图片缩放-尺寸缩放
+compressImage	质量压缩图片-压缩在1M以内
+compressImage	质量压缩图片
+compressImage	质量压缩图片-压缩在maxSize以内
+createBitmapThumbnail	生成bitmap缩略图
+drawableToBitmap	drawable转Bitmap
+getDegress	根据path, 获取图片旋转角度
+rotateBitmap	旋转bitmap
+saveBitmap	保存Bitmap到文件
+scaleImage	缩放image
+scaleImageTo	缩放image到指定高、宽
+CloseTool
+//usage examples:
+   Tools.close().closeIO(in); // 关闭IO
+
+
+closeIO	关闭IO
+closeIOQuietly	安静关闭IO
+ExternalStorageTool
+//usage examples:
+   Tools.externalStorage().isAvailable(); // sdcard是否可用
+
+
+getAllStorageLocations	获取所有可用sdcard
+getSdCardPath	获取sdcard路径
+isAvailable	sdcard是否可用
+isWritable	sdcard是否可写
+FileTool
+//usage examples:
+   Tools.file().getFileByPath("/sdcard/mock.txt"); // 根据文件路径获取文件
+
+
+copyDir	复制目录
+copyFile	复制文件
+createFileByDeleteOldFile	判断文件是否存在，存在则在创建之前删除
+createOrExistsDir	判断目录是否存在，不存在则判断是否创建成功
+createOrExistsFile	判断文件是否存在，不存在则判断是否创建成功
+deleteDir	删除目录
+deleteFile	删除文件
+deleteFilesInDir	删除目录下的所有文件
+getDirLength	获取目录长度
+getDirName	获取全路径中的最长目录
+getFileByPath	根据文件路径获取文件
+getFileCharsetSimple	简单获取文件编码格式
+getFileExtension	获取全路径中的文件拓展名
+getFileLastModified	获取文件最后修改的毫秒时间戳
+getFileLength	获取文件长度
+getFileLines	获取文件行数
+getFileMD5	获取文件的MD5校验码
+getFileMD5ToString	获取文件的MD5校验码
+getFileName	获取全路径中的文件名
+getFileNameNoExtension	获取全路径中的不带拓展名的文件名
+getFileSize	获取文件大小
+isDir	判断是否是目录
+isFile	判断是否是文件
+isFileExists	判断文件是否存在
+listFilesInDir	获取目录下所有文件包括子目录
+listFilesInDirWithFilter	获取目录下所有符合filter的文件包括子目录
+moveDir	移动目录
+moveFile	移动文件
+readFile2Bytes	读取文件到字符数组中
+readFile2List	指定编码按行读取文件到链表中
+readFile2String	指定编码按行读取文件到字符串中
+rename	重命名文件
+searchFileInDir	获取目录下指定文件名的文件包括子目录 大小写忽略
+writeFileFromIS	将输入流写入文件
+writeFileFromString	将字符串写入文件
+SPTool
+//usage examples:
+   Tools.sp().saveShareBoolean("mock_key", true); // 存储moke_key的值到shared_preference的文件
+
+
+name	设置SharedPreference的xml文件名，默认为AndroidTools.xml
+saveShareBoolean	存储布尔值
+saveShareInt	存储整型值
+saveShareString	存储字符串
+LogTool
+//three kinds of LogTool usage:
+   Tools.log().d("print log with default generated tag"); //默认tag ==> 打印结果为【类名.方法名[第几行]】:App.onCreate(line:20)    Tools.log().tag(App.class.getSimpleName()).d("print log with tag()");//指定tag Tools.log().d(App.class.getSimpleName(), "print log with set tag");//指定tag
+
+
+setDebug	设置是否打印log
+tag	设置tag
+RegexTool
+//usage examples:
+   Tools.regex().isEmail("wangdd_bj@163.com"); // 获取后台服务进程
+
+
+isUserName	是否为用户名
+isPassword	是否为密码
+isMobile	是否为手机号
+isEmail	是否为邮箱
+isChinese	是否为中文
+isIDCard	是否为身份证号（中国）
+isUrl	是否为URL
+isIPAddress	是否为IP地址
+isPlateNum	是否为车牌号（中国）
+isVehicleVin	是否为车辆vin码
+ShellTool
+//usage examples:
+   Tools.shell().execCmd("ls /sdcard/", ""); // 获取后台服务进程
+
+
+execCmd	是否是在root下执行命令
+StringTool
+//usage examples:
+   Tools.string().isEmpty(); // 是否为null或者长度为0或者都是空格
+
+
+isEmpty	是否为null或者长度为0或者都是空格
+isBlank	是否为null或者长度为0或者都是空格
+length	字符串长度，如果为null，返回0
+nullStrToEmpty	将空对象转化为空字符串
+capitalizeFirstLetter	首字母大写
+utf8Encode	编码为utf-8
+fullWidthToHalfWidth	全角转半角
+halfWidthToFullWidth	半角转全角
+sqliteEscape	数据库字符转义
+TimeTool
+//usage examples:
+   Tools.time().millis2String(System.currentTimeMillis()); // 将时间戳转为时间字符串
+
+
+date2Millis	将Date类型转为时间戳
+date2String	将Date类型转为时间字符串
+getChineseZodiac	获取生肖
+getFitTimeSpan	获取合适型两个时间差
+getFitTimeSpanByNow	获取合适型与当前时间的差
+getFriendlyTimeSpanByNow	获取友好型与当前时间的差
+getNowTimeDate	获取当前Date
+getNowTimeMills	获取当前毫秒时间戳
+getNowTimeString	获取当前时间字符串
+getTimeSpan	获取两个时间差
+getTimeSpanByNow	获取与当前时间的差
+getWeek	获取星期
+getWeekIndex	获取星期 注意：周日的Index才是1，周六为7
+getWeekOfMonth	获取月份中的第几周 注意：国外周日才是新的一周的开始
+getWeekOfYear	获取年份中的第几周 注意：国外周日才是新的一周的开始
+getZodiac	获取星座
+isLeapYear	判断是否闰年
+isSameDay	判断是否同一天
+millis2Date	将时间戳转为Date类型
+millis2String	将时间戳转为时间字符串
+string2Date	将时间字符串转为Date类型
+string2Millis	将时间字符串转为时间戳
+UnitTool
+//usage examples:
+Tools.unit().c2f(27f); // 摄氏度转华氏度
+
+c2f	摄氏度转华氏度
+f2c	华氏度转摄氏度
+km2mi	km转mile
+mi2km	mile转km
+l2gal	升转加仑
+l100km2mpg	百公里油耗转mpg
+mpg2l100km	mpg转百公里油耗
+SecureTool
+
+encryptMD2ToString	MD2加密
+encryptMD5ToString	MD5加密
+encryptMD5File2String	MD5加密文件
+encryptSHA1ToString	SHA1加密
+encryptSHA224ToString	SHA224加密
+encryptSHA256ToString	SHA256加密
+encryptSHA384ToString	SHA384加密
+encryptSHA512ToString	SHA512加密
+hashTemplate	hash加密模板
+encryptHmacMD5ToString	HmacMD5加密
+encryptHmacSHA1ToString	HmacSHA1加密
+encryptDES2Base64	DES加密后转为Base64编码
+encryptDES2HexString	DES加密后转为16进制
+encryptDES	DES加密
+decryptBase64DES	DES解密Base64编码密文
+decryptHexStringDES	DES解密16进制密文
+decryptDES	DES解密
+encrypt3DES2Base64	3DES加密后转为Base64编码
+encrypt3DES2HexString	3DES加密后转为16进制
+encrypt3DES	3DES加密
+decrypt3DES	3DES解密
+encryptAES2Base64	AES加密后转为Base64编码
+encryptAES	AES加密
+decryptAES	AES解密
